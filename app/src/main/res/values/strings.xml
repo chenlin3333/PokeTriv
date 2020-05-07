@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PokeTrivia</string>
+    <string name="start">Start</string>
+    <string name="title_activity_display_pokedex">DisplayPokedex</string>
+    <string name="action_settings">Settings</string>
+    <string name="pokemon_trivia">Pokemon Trivia</string>
+    <string name="shop">Shop</string>
+    <string name="play">Play</string>
+    <string name="pokedex">PokeDex</string>
+    <string name="unknown">UNKNOWN</string>
+</resources>
