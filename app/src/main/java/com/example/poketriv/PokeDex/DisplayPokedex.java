@@ -14,21 +14,21 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class DisplayPokedex extends AppCompatActivity {
+    public static Pokemon[] currentGen1PokeDex = new Pokemon[151];
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Pokemon[] array = PokeDex.generation1;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_pokedex);
         GridView gridView = findViewById(R.id.gridview);
-        PokeDexAdapter adapter = new PokeDexAdapter(this, array);
+        PokeDexAdapter adapter = new PokeDexAdapter(this, currentGen1PokeDex);
         gridView.setAdapter(adapter);
         final Context context = this;
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(PokeDex.generation1[position] != null){
+                if(currentGen1PokeDex[position] != null){
                     Intent myIntent = new Intent(context, DisplayPokemon.class);
                     String value = String.valueOf(position);
                     myIntent.putExtra("Pokemon", value);

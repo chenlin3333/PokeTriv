@@ -8,4 +8,12 @@
     <string name="play">Play</string>
     <string name="pokedex">PokeDex</string>
     <string name="unknown">UNKNOWN</string>
+    <string name="legend_box">LEGEND BOX</string>
+    <string name="_1000g">1000G</string>
+    <string name="_500g">500G</string>
+    <string name="ultra_box">ULTRA BOX</string>
+    <string name="_250g">250G</string>
+    <string name="rare_box">RARE BOX</string>
+    <string name="common_box">COMMON BOX</string>
+    <string name="_100g">100g</string>
 </resources>
