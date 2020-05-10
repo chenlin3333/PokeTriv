@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         PokeDex dex = new PokeDex();
-        dex.addGen1();
+        dex.addAllPokemon();
     }
 
     public void shopButton(View view){

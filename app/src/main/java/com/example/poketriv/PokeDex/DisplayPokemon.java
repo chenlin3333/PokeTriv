@@ -26,7 +26,7 @@ public class DisplayPokemon extends AppCompatActivity {
             assert value != null;
             position = Integer.parseInt(value);
         }
-        Pokemon pokemon = PokeDex.generation1[position];
+        Pokemon pokemon = DisplayPokedex.currentGen1PokeDex[position];
         final LinearLayout linearLayout = findViewById(R.id.linearLayout);
         final ImageView imageView = findViewById(R.id.PokeImage);
         final TextView type1 = findViewById(R.id.type1);

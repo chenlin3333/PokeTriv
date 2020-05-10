@@ -7,14 +7,73 @@ public class Pokemon {
     private int imageResource;
     private String pokeDexNumber;
     private String name;
+    private int generation;
+    private String rarity;
 
 
-    public Pokemon(String pokeDexNumber, String name, String type1, String type2, int imageResource){
+    public Pokemon(String pokeDexNumber, String name, String type1, String type2, int imageResource, int generation, String rarity){
         this.imageResource = imageResource;
         this.pokeDexNumber = pokeDexNumber;
         this.type1 = type1;
         this.type2 = type2;
         this.name = name;
+        this.rarity = rarity;
+        this.generation = generation;
+        addToRaritySet();
+        addToGenerationSet();
+    }
+
+    private void addToRaritySet(){
+        if(rarity.equals("common")){
+            PokeDex.commonPokemon.put(name, this);
+        }
+        if(rarity.equals("rare")){
+            PokeDex.rarePokemon.put(name, this);
+        }
+        if(rarity.equals("superrare")){
+            PokeDex.superRarePokemon.put(name, this);
+        }
+        if(rarity.equals("ultra")){
+            PokeDex.ultraPokemon.put(name, this);
+        }
+        if(rarity.equals("legend")){
+            PokeDex.legendPokemon.put(name, this);
+        }
+    }
+
+    private void addToGenerationSet(){
+        if(generation == 1){
+            PokeDex.generation1.put(name, this);
+        }
+        if(generation == 2){
+            PokeDex.generation2.put(name, this);
+        }
+        if(generation == 3){
+            PokeDex.generation3.put(name, this);
+        }
+        if(generation == 4){
+            PokeDex.generation4.put(name, this);
+        }
+        if(generation == 5){
+            PokeDex.generation5.put(name, this);
+        }
+        if(generation == 6){
+            PokeDex.generation6.put(name, this);
+        }
+        if(generation == 7){
+            PokeDex.generation7.put(name, this);
+        }
+        if(generation == 8){
+            PokeDex.generation8.put(name, this);
+        }
+    }
+
+    public String getRarity(){
+        return rarity;
+    }
+
+    public int getGeneration(){
+        return generation;
     }
 
     public String getName(){
