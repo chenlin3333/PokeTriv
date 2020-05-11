@@ -1,23 +1,24 @@
 package com.example.poketriv.PokeDex;
 
 import com.example.poketriv.R;
-import java.util.HashMap;
+
+import java.util.ArrayList;
 
 public class PokeDex {
 
-    public static HashMap<String, Pokemon> generation1 = new HashMap<>();
-    public static HashMap<String, Pokemon> generation2 = new HashMap<>();
-    public static HashMap<String, Pokemon> generation3 = new HashMap<>();
-    public static HashMap<String, Pokemon> generation4 = new HashMap<>();
-    public static HashMap<String, Pokemon> generation5 = new HashMap<>();
-    public static HashMap<String, Pokemon> generation6 = new HashMap<>();
-    public static HashMap<String, Pokemon> generation7 = new HashMap<>();
-    public static HashMap<String, Pokemon> generation8 = new HashMap<>();
-    public static HashMap<String, Pokemon> commonPokemon = new HashMap<>();
-    public static HashMap<String, Pokemon> rarePokemon = new HashMap<>();
-    public static HashMap<String, Pokemon> superRarePokemon = new HashMap<>();
-    public static HashMap<String, Pokemon> ultraPokemon = new HashMap<>();
-    public static HashMap<String, Pokemon> legendPokemon = new HashMap<>();
+    public static ArrayList<Pokemon> generation1 = new ArrayList<>();
+    public static ArrayList<Pokemon> generation2 = new ArrayList<>();
+    public static ArrayList<Pokemon> generation3 = new ArrayList<>();
+    public static ArrayList<Pokemon> generation4 = new ArrayList<>();
+    public static ArrayList<Pokemon> generation5 = new ArrayList<>();
+    public static ArrayList<Pokemon> generation6 = new ArrayList<>();
+    public static ArrayList<Pokemon> generation7 = new ArrayList<>();
+    public static ArrayList<Pokemon> generation8 = new ArrayList<>();
+    public static ArrayList<Pokemon> commonPokemon = new ArrayList<>();
+    public static ArrayList<Pokemon> rarePokemon = new ArrayList<>();
+    public static ArrayList<Pokemon> superRarePokemon = new ArrayList<>();
+    public static ArrayList<Pokemon> ultraPokemon = new ArrayList<>();
+    public static ArrayList<Pokemon> legendPokemon = new ArrayList<>();
 
     public void addAllPokemon() {
         new Pokemon("#001", "Bulbasaur", "Grass", "Poison", R.drawable.bulbasaur,1, "rare");

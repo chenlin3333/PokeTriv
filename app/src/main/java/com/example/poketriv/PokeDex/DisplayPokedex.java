@@ -14,7 +14,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 public class DisplayPokedex extends AppCompatActivity {
-    public static Pokemon[] currentGen1PokeDex = new Pokemon[151];
+    public static Pokemon[] currentGen1PokeDex = new Pokemon[PokeDex.generation1.size() +
+            PokeDex.generation2.size() + PokeDex.generation3.size() + PokeDex.generation4.size() +
+            PokeDex.generation5.size() + PokeDex.generation6.size() + PokeDex.generation7.size() +
+            PokeDex.generation8.size()];
 
 
     @Override

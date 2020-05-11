@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/layout"
-    tools:context=".DisplayPlayOptions">
+    tools:context=".DisplayShop">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,6 +20,7 @@
             android:layout_marginTop="5dp"
             android:background="#A39F9F"
             android:text="@string/_100g"
+            android:onClick="commonButton"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
             app:layout_constraintHorizontal_bias="0.166"
             app:layout_constraintStart_toStartOf="@+id/textView7"

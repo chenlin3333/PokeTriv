@@ -3,6 +3,7 @@ package com.example.poketriv;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.GridLayout;
 
 public class DisplayPlayOptions extends AppCompatActivity {

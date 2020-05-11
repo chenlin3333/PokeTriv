@@ -1,6 +1,8 @@
 package com.example.poketriv.PokeDex;
 
-public class Pokemon {
+import java.io.Serializable;
+
+public class Pokemon implements Serializable {
 
     private String type1;
     private String type2;
@@ -19,52 +21,52 @@ public class Pokemon {
         this.name = name;
         this.rarity = rarity;
         this.generation = generation;
-        addToRaritySet();
-        addToGenerationSet();
+        addToRarityList();
+        addToGenerationList();
     }
 
-    private void addToRaritySet(){
+    private void addToRarityList(){
         if(rarity.equals("common")){
-            PokeDex.commonPokemon.put(name, this);
+            PokeDex.commonPokemon.add(this);
         }
         if(rarity.equals("rare")){
-            PokeDex.rarePokemon.put(name, this);
+            PokeDex.rarePokemon.add(this);
         }
         if(rarity.equals("superrare")){
-            PokeDex.superRarePokemon.put(name, this);
+            PokeDex.superRarePokemon.add(this);
         }
         if(rarity.equals("ultra")){
-            PokeDex.ultraPokemon.put(name, this);
+            PokeDex.ultraPokemon.add(this);
         }
         if(rarity.equals("legend")){
-            PokeDex.legendPokemon.put(name, this);
+            PokeDex.legendPokemon.add(this);
         }
     }
 
-    private void addToGenerationSet(){
+    private void addToGenerationList(){
         if(generation == 1){
-            PokeDex.generation1.put(name, this);
+            PokeDex.generation1.add(this);
         }
         if(generation == 2){
-            PokeDex.generation2.put(name, this);
+            PokeDex.generation2.add(this);
         }
         if(generation == 3){
-            PokeDex.generation3.put(name, this);
+            PokeDex.generation3.add(this);
         }
         if(generation == 4){
-            PokeDex.generation4.put(name, this);
+            PokeDex.generation4.add(this);
         }
         if(generation == 5){
-            PokeDex.generation5.put(name, this);
+            PokeDex.generation5.add(this);
         }
         if(generation == 6){
-            PokeDex.generation6.put(name, this);
+            PokeDex.generation6.add(this);
         }
         if(generation == 7){
-            PokeDex.generation7.put(name, this);
+            PokeDex.generation7.add(this);
         }
         if(generation == 8){
-            PokeDex.generation8.put(name, this);
+            PokeDex.generation8.add(this);
         }
     }
 
@@ -151,6 +153,25 @@ public class Pokemon {
         }
         if(lowerType.equals("water")){
             return "#6890F0";
+        }
+        return null;
+    }
+
+    public String determineRarity(){
+        if(rarity.equals("common")){
+            return "#808080";
+        }
+        if(rarity.equals("rare")){
+            return "#32CD32";
+        }
+        if(rarity.equals("superrare")){
+            return "#00FFFF";
+        }
+        if(rarity.equals("ultra")){
+            return "#FF0000";
+        }
+        if(rarity.equals("legend")){
+            return "#D4AF37";
         }
         return null;
     }
