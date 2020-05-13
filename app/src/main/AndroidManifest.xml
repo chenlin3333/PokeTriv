@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PokeDex.DisplayPokemon"
+        <activity
+            android:name=".PokeDex.DisplayPokemon"
             android:parentActivityName=".PokeDex.DisplayPokedex">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -23,13 +24,20 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".PokeDex.DisplayPokedex"
-            android:label="@string/title_activity_display_pokedex"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".DisplayGenerations"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".PokeDex.DisplayPokedex"
+            android:label="@string/title_activity_display_pokedex"
+            android:parentActivityName=".DisplayGenerations"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisplayGenerations" />
         </activity>
         <activity
             android:name=".DisplayShop"
@@ -38,7 +46,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".DisplayBoxRewards"
+        <activity
+            android:name=".DisplayBoxRewards"
             android:parentActivityName=".DisplayShop">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

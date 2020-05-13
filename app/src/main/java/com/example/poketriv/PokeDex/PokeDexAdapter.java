@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-
 import com.example.poketriv.R;
 
-
+/**
+ * a class that represents a pokemon adapter
+ * this displays the grid in pokedex
+ */
 public class PokeDexAdapter extends BaseAdapter {
 
     private final Context mContext;
@@ -37,6 +39,14 @@ public class PokeDexAdapter extends BaseAdapter {
         return 0;
     }
 
+    /**
+     * refers to current pokeDex in DisplayPokedex to see if a grid location should be pokeball
+     * or pokemon image
+     * @param position: location on grid
+     * @param convertView: the view at that location
+     * @param parent: parent view
+     * @return View
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final Pokemon pokemon = pokeDex[position];

@@ -8,11 +8,13 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.example.poketriv.PokeDex.PokeDex;
-import com.example.poketriv.PokeDex.Pokemon;
 import com.example.poketriv.R;
 
+/**
+ * A class that represents the display for when a pokemon is selected
+ * Uses activity_display_pokemon layout
+ * sets each text view or image view to match pokemon's description
+ */
 public class DisplayPokemon extends AppCompatActivity {
 
     @Override

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pokedexButton(View view){
-        Intent intent = new Intent(this, DisplayPokedex.class);
+        Intent intent = new Intent(this, DisplayGenerations.class);
         startActivity(intent);
     }
 

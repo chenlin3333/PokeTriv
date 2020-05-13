@@ -5,14 +5,14 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.poketriv.PokeDex.DisplayPokedex;
 import com.example.poketriv.PokeDex.Pokemon;
 
-import java.io.Serializable;
-
+/**
+ * A class that represents the display for when a box button is clicked
+ * uses activity_display_pokemon layout
+ */
 public class DisplayBoxRewards extends AppCompatActivity{
 
     @Override

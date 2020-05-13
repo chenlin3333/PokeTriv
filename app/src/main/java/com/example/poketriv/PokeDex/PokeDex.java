@@ -4,6 +4,10 @@ import com.example.poketriv.R;
 
 import java.util.ArrayList;
 
+/**
+ * A class that represents the data of a pokedex
+ * Has an ArrayList for each category of pokemon
+ */
 public class PokeDex {
 
     public static ArrayList<Pokemon> generation1 = new ArrayList<>();
@@ -20,6 +24,9 @@ public class PokeDex {
     public static ArrayList<Pokemon> ultraPokemon = new ArrayList<>();
     public static ArrayList<Pokemon> legendPokemon = new ArrayList<>();
 
+    /**
+     * A method that makes all pokemon
+     */
     public void addAllPokemon() {
         new Pokemon("#001", "Bulbasaur", "Grass", "Poison", R.drawable.bulbasaur,1, "rare");
         new Pokemon("#002", "Ivysaur", "Grass", "Poison", R.drawable.ivysaur,1, "superrare");
@@ -66,6 +73,7 @@ public class PokeDex {
         new Pokemon("#043", "Oddish", "Grass", "Poison", R.drawable.oddish,1,"common");
         new Pokemon("#044", "Gloom", "Grass", "Poison", R.drawable.gloom,1,"rare");
         new Pokemon("#045", "Vileplume", "Grass", "Poison", R.drawable.vileplume,1,"superrare");
+        new Pokemon("#046", "Paras", "Bug", "Grass", R.drawable.paras, 1,"common");
         new Pokemon("#047", "Parasect", "Bug", "Grass", R.drawable.parasect,1,"rare");
         new Pokemon("#048", "Venonat", "Bug", "Poison", R.drawable.venonat,1,"rare");
         new Pokemon("#049", "Venomoth", "Bug", "Poison", R.drawable.venomoth,1,"superrare");

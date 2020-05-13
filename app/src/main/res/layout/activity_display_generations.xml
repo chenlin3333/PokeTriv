@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayGenerations">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/border"
+        tools:layout_editor_absoluteX="-27dp"
+        tools:layout_editor_absoluteY="-55dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:background="#FFD54F"
+            android:gravity="center"
+            android:text="@string/choose_a_generation_of_pokemon_to_view"
+            android:textColor="#020202"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/gen1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_1"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:onClick="openPokeDex"/>
+
+        <Button
+            android:id="@+id/gen2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_2"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/gen1"
+            app:layout_constraintStart_toStartOf="@+id/gen1"
+            app:layout_constraintTop_toBottomOf="@+id/gen1"
+            android:onClick="openPokeDex"/>
+
+        <Button
+            android:id="@+id/gen3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_3"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/gen2"
+            app:layout_constraintStart_toStartOf="@+id/gen2"
+            app:layout_constraintTop_toBottomOf="@+id/gen2"
+            android:onClick="openPokeDex"/>
+
+        <Button
+            android:id="@+id/gen4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_4"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/gen3"
+            app:layout_constraintStart_toStartOf="@+id/gen3"
+            app:layout_constraintTop_toBottomOf="@+id/gen3"
+            android:onClick="openPokeDex"/>
+
+        <Button
+            android:id="@+id/gen5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_5"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/gen4"
+            app:layout_constraintStart_toStartOf="@+id/gen4"
+            app:layout_constraintTop_toBottomOf="@+id/gen4"
+            android:onClick="openPokeDex"/>
+
+        <Button
+            android:id="@+id/gen6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_6"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/gen5"
+            app:layout_constraintStart_toStartOf="@+id/gen5"
+            app:layout_constraintTop_toBottomOf="@+id/gen5"
+            android:onClick="openPokeDex"/>
+
+        <Button
+            android:id="@+id/gen7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_7"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/gen6"
+            app:layout_constraintStart_toStartOf="@+id/gen6"
+            app:layout_constraintTop_toBottomOf="@+id/gen6"
+            android:onClick="openPokeDex"/>
+
+        <Button
+            android:id="@+id/gen8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="#FFD54F"
+            android:text="@string/generation_8"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/gen7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/gen7"
+            app:layout_constraintTop_toBottomOf="@+id/gen7"
+            android:onClick="openPokeDex"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

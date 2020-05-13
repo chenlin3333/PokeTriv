@@ -2,6 +2,9 @@ package com.example.poketriv.PokeDex;
 
 import java.io.Serializable;
 
+/**
+ * A class that represents a pokemon
+ */
 public class Pokemon implements Serializable {
 
     private String type1;
@@ -13,6 +16,16 @@ public class Pokemon implements Serializable {
     private String rarity;
 
 
+    /**
+     * Makes a pokemon with given information
+     * @param pokeDexNumber: String
+     * @param name: String
+     * @param type1: String
+     * @param type2: String
+     * @param imageResource: int
+     * @param generation: int
+     * @param rarity: String
+     */
     public Pokemon(String pokeDexNumber, String name, String type1, String type2, int imageResource, int generation, String rarity){
         this.imageResource = imageResource;
         this.pokeDexNumber = pokeDexNumber;
@@ -25,6 +38,9 @@ public class Pokemon implements Serializable {
         addToGenerationList();
     }
 
+    /**
+     * Called when pokemon is made, add it to correct rarity list
+     */
     private void addToRarityList(){
         if(rarity.equals("common")){
             PokeDex.commonPokemon.add(this);
@@ -43,6 +59,9 @@ public class Pokemon implements Serializable {
         }
     }
 
+    /**
+     * Called when pokemon is made, adds it to the correct generation list
+     */
     private void addToGenerationList(){
         if(generation == 1){
             PokeDex.generation1.add(this);
@@ -98,6 +117,11 @@ public class Pokemon implements Serializable {
         return pokeDexNumber;
     }
 
+    /**
+     * Returns a color string corresponding to pokemon type
+     * @param type: String, Pokemon Type
+     * @return String
+     */
     public String determineType(String type){
         String lowerType = type.toLowerCase();
         if(lowerType.equals("grass")){
