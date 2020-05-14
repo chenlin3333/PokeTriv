@@ -3,25 +3,30 @@ package com.example.poketriv;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.TextView;
+
 import com.example.poketriv.PokeDex.PokeDex;
 import com.example.poketriv.PokeDex.Pokemon;
-
 import java.util.Random;
 
 public class DisplayShop extends AppCompatActivity {
 
-    public static int goldAmount = 1000000;
+    public static int goldAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_shop);
+        SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+        goldAmount = sp.getInt("gold", 1000);
         GradientDrawable gd = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,
                 new int[]{Color.parseColor("#C0C0C0"),
                         Color.parseColor("#D4AF37")});
@@ -36,6 +41,10 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 100) {
             Pokemon pokemon = null;
             goldAmount -= 100;
+            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("gold", goldAmount);
+            editor.apply();
             Random rand = new Random();
             int randInt = rand.nextInt(1001);
             if (randInt <= 799) {
@@ -64,6 +73,10 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 250) {
             Pokemon pokemon = null;
             goldAmount -= 250;
+            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("gold", goldAmount);
+            editor.apply();
             Random rand = new Random();
             int randInt = rand.nextInt(1001);
             if (randInt <= 499) {
@@ -92,6 +105,10 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 500) {
             Pokemon pokemon = null;
             goldAmount -= 500;
+            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("gold", goldAmount);
+            editor.apply();
             Random rand = new Random();
             int randInt = rand.nextInt(1001);
             if (randInt <= 750) {
@@ -117,6 +134,10 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 1000) {
             Pokemon pokemon = null;
             goldAmount -= 1000;
+            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putInt("gold", goldAmount);
+            editor.apply();
             Random rand = new Random();
             int randInt = rand.nextInt(1001);
             if (randInt <= 800) {

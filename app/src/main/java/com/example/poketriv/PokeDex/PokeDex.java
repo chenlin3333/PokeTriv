@@ -1,14 +1,16 @@
 package com.example.poketriv.PokeDex;
 
-import com.example.poketriv.R;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.poketriv.R;
 import java.util.ArrayList;
 
 /**
  * A class that represents the data of a pokedex
  * Has an ArrayList for each category of pokemon
  */
-public class PokeDex {
+public class PokeDex{
 
     public static ArrayList<Pokemon> generation1 = new ArrayList<>();
     public static ArrayList<Pokemon> generation2 = new ArrayList<>();
@@ -23,6 +25,7 @@ public class PokeDex {
     public static ArrayList<Pokemon> superRarePokemon = new ArrayList<>();
     public static ArrayList<Pokemon> ultraPokemon = new ArrayList<>();
     public static ArrayList<Pokemon> legendPokemon = new ArrayList<>();
+
 
     /**
      * A method that makes all pokemon
@@ -179,6 +182,8 @@ public class PokeDex {
         new Pokemon("#149", "Dragonite", "Dragon", "Flying", R.drawable.dragonite,1,"legend");
         new Pokemon("#150", "Mewtwo", "Psychic", null, R.drawable.mewtwo,1, "legend");
         new Pokemon("#151", "Mew", "Psychic", null, R.drawable.mew,1,"legend");
+        new Pokemon( "#152", "Chikorita", "Grass", null, R.drawable.chikorita, 2, "rare");
+        new Pokemon("#153", "Bayleef", "Grass", null, R.drawable.bayleef, 2, "superrare");
     }
 
 }
