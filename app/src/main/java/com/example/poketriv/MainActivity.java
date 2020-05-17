@@ -27,13 +27,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         PokeDex pokeDex = new PokeDex();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        if (true) {
+        if (!prefs.getBoolean("firstTime", false)) {
             pokeDex.addAllPokemon();
             savePokeLists();
             SharedPreferences.Editor editors = prefs.edit();
             editors.putBoolean("firstTime", true);
             editors.apply();
-        }
+       }
         retrievePokemonLists();
     }
 

@@ -35,13 +35,15 @@ public class DisplayPokedex extends AppCompatActivity {
         assert extras != null;
         int generation = (int)extras.get("generation");
         GridView gridView = findViewById(R.id.gridview);
-        PokeDexAdapter adapter = new PokeDexAdapter(this, determineGeneration(generation));
+        final Pokemon[] array = determineGeneration(generation);
+        PokeDexAdapter adapter = new PokeDexAdapter(this, array);
         gridView.setAdapter(adapter);
         final Context context = this;
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(currentGen1PokeDex[position] != null){
+                assert array != null;
+                if(array[position] != null){
                     Intent myIntent = new Intent(context, DisplayPokemon.class);
                     String value = String.valueOf(position);
                     myIntent.putExtra("Pokemon", value);
