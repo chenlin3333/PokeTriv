@@ -36,6 +36,7 @@ public class Pokemon implements Serializable {
         this.generation = generation;
         addToRarityList();
         addToGenerationList();
+        PokeDex.completePokeDex.add(this);
     }
 
     /**
