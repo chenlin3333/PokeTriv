@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.poketriv.PokeDex.DisplayPokedex;
-import com.example.poketriv.PokeDex.PokeDex;
 import com.example.poketriv.PokeDex.Pokemon;
 import com.google.gson.Gson;
 

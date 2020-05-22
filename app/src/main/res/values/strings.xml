@@ -25,4 +25,10 @@
     <string name="generation_5">Generation 5</string>
     <string name="generation_4">Generation 4</string>
     <string name="generation_3">Generation 3</string>
+    <string name="_25_questions">25 Questions</string>
+    <string name="_50_questions">50 Questions</string>
+    <string name="_100_questions">100 Questions</string>
+    <string name="how_many_questions_do_you_want">How Many Questions Do You Want?</string>
+    <string name="_10_questions">10 Questions</string>
+    <string name="you_will_not_get_partial_rewards_if_you_don_t_answer_all_the_questions_pick_at_your_own_risk">You will not get partial rewards if you don\'t answer all the questions.Pick at your own risk!</string>
 </resources>

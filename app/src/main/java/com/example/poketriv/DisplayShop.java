@@ -27,7 +27,6 @@ public class DisplayShop extends AppCompatActivity {
         setContentView(R.layout.activity_display_shop);
         SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
         goldAmount = sp.getInt("gold", 1000);
-        goldAmount = 1000000;
         GradientDrawable gd = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,
                 new int[]{Color.parseColor("#C0C0C0"),
                         Color.parseColor("#D4AF37")});
