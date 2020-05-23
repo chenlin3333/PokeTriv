@@ -10,10 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DisplayPokemonQuestions"
+        <activity
+            android:name=".DisplayTriviaRewards"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
-        </activity>
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".DisplayPokemonQuestions"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".PokeDex.DisplayPokemon"
             android:parentActivityName=".PokeDex.DisplayPokedex"
@@ -45,8 +49,8 @@
             android:name=".PokeDex.DisplayPokedex"
             android:label="@string/title_activity_display_pokedex"
             android:parentActivityName=".DisplayGenerations"
-            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="LockedOrientationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -70,7 +74,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DisplayShop" />
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>

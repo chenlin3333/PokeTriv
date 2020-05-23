@@ -3,7 +3,6 @@ package com.example.poketriv;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -25,7 +24,7 @@ public class DisplayShop extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_shop);
-        SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("GoldCount", 0);
         goldAmount = sp.getInt("gold", 1000);
         GradientDrawable gd = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,
                 new int[]{Color.parseColor("#C0C0C0"),
@@ -41,7 +40,7 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 100) {
             Pokemon pokemon = null;
             goldAmount -= 100;
-            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences("GoldCount", 0);
             SharedPreferences.Editor editor = sp.edit();
             editor.putInt("gold", goldAmount);
             editor.apply();
@@ -73,7 +72,7 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 250) {
             Pokemon pokemon = null;
             goldAmount -= 250;
-            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences("GoldCount", 0);
             SharedPreferences.Editor editor = sp.edit();
             editor.putInt("gold", goldAmount);
             editor.apply();
@@ -105,7 +104,7 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 500) {
             Pokemon pokemon = null;
             goldAmount -= 500;
-            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences("GoldCount", 0);
             SharedPreferences.Editor editor = sp.edit();
             editor.putInt("gold", goldAmount);
             editor.apply();
@@ -134,7 +133,7 @@ public class DisplayShop extends AppCompatActivity {
         if (goldAmount >= 1000) {
             Pokemon pokemon = null;
             goldAmount -= 1000;
-            SharedPreferences sp = getSharedPreferences("GoldCount", Context.MODE_PRIVATE);
+            SharedPreferences sp = getSharedPreferences("GoldCount", 0);
             SharedPreferences.Editor editor = sp.edit();
             editor.putInt("gold", goldAmount);
             editor.apply();

@@ -13,6 +13,7 @@ import com.example.poketriv.PokeDex.PokeDex;
 import com.example.poketriv.PokeDex.Pokemon;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 
 public class DisplayPokemonQuestions extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_pokemon_questions);
         Random randint = new Random();
-        int index = randint.nextInt(PokeDex.completePokeDex.size() - 1);
+        int index = randint.nextInt(PokeDex.completePokeDex.size());
         pokemon = PokeDex.completePokeDex.get(index);
         initializeQuestion();
     }
@@ -38,13 +39,17 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
             correctButton.setBackgroundColor(Color.parseColor("#39ff14"));
             if(clickedButton.equals(correctButton)){
                 DisplayPlayOptions.streak += 1;
-                DisplayPlayOptions.numQuestions -= 1;
+                if(DisplayPlayOptions.streak > DisplayPlayOptions.maxStreak){
+                    DisplayPlayOptions.maxStreak = DisplayPlayOptions.streak;
+                }
+                DisplayPlayOptions.correctAnswers += 1;
+                DisplayPlayOptions.numQuestionsLeft -= 1;
                 DisplayPlayOptions.goldEarned += DisplayPlayOptions.streak*10 + 10;
             }
             else{
                 clickedButton.setBackgroundColor(Color.parseColor("#a62c2b"));
                 DisplayPlayOptions.streak = 0;
-                DisplayPlayOptions.numQuestions -= 1;
+                DisplayPlayOptions.numQuestionsLeft -= 1;
             }
             Button next = findViewById(R.id.nextButton);
             next.setVisibility(View.VISIBLE);
@@ -53,12 +58,18 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
     }
 
     public void nextQuestion(View view){
-        if(DisplayPlayOptions.numQuestions != 0){
+        if(DisplayPlayOptions.numQuestionsLeft != 0){
             Intent next = new Intent(this, DisplayPokemonQuestions.class);
             startActivity(next);
         }
+        else{
+            Intent result = new Intent(this, DisplayTriviaRewards.class);
+            startActivity(result);
+        }
     }
     public void exitGame(View view){
+        DisplayPlayOptions.correctAnswers = 0;
+        DisplayPlayOptions.maxStreak = 0;
         DisplayPlayOptions.streak = 0;
         DisplayPlayOptions.goldEarned = 0;
         Intent mainPage = new Intent(this, MainActivity.class);
@@ -67,7 +78,7 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
 
     private void initializeQuestion(){
         Random random = new Random();
-        int randomInt = random.nextInt(2);
+        int randomInt = random.nextInt(3);
         final TextView questionLeft = findViewById(R.id.questionLeft);
         final TextView streak = findViewById(R.id.streak);
         final TextView goldEarned = findViewById(R.id.goldEarned);
@@ -78,7 +89,7 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
         final Button answer3 = findViewById(R.id.choice3);
         final Button answer4 = findViewById(R.id.choice4);
 
-        String questionNum = "Questions Left:" + DisplayPlayOptions.numQuestions;
+        String questionNum = "Questions Left:" + DisplayPlayOptions.numQuestionsLeft;
         questionLeft.setText(questionNum);
 
         String currentStreak = "Streak: " + DisplayPlayOptions.streak;
@@ -97,41 +108,76 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
         allButtons.add(answer3);
         allButtons.add(answer4);
 
+        HashSet<String> answerChoices = new HashSet<>();
         if(pokemon.getType2() != null && randomInt == 0){
-            correctButton = allButtons.get(random.nextInt(allButtons.size() - 1));
-            correctButton.setText(returnAnswer(randomInt,pokemon));
+            String answer = returnAnswer(randomInt, pokemon);
+            answerChoices.add(answer);
+            correctButton = allButtons.get(random.nextInt(allButtons.size()));
+            correctButton.setText(answer);
             allButtons.remove(correctButton);
 
-            String option2 = pokemon.getType1() + " and " + determineOptions(randomInt);
-            Button button2 = allButtons.get(random.nextInt(allButtons.size() - 1));
-            button2.setText(option2);
+            String option2 = determineOptions(randomInt);
+            while(answerChoices.contains(option2)){
+                option2 = determineOptions(randomInt);
+            }
+            answerChoices.add(option2);
+            String choice2 = pokemon.getType1() + " and " + option2;
+            Button button2 = allButtons.get(random.nextInt(allButtons.size()));
+            button2.setText(choice2);
             allButtons.remove(button2);
 
-            String option3 = pokemon.getType1() + " and " + determineOptions(randomInt);
-            Button button3 = allButtons.get(random.nextInt(allButtons.size() - 1));
-            button3.setText(option3);
+            String option3 = determineOptions(randomInt);
+            while(answerChoices.contains(option3)){
+                option3 = determineOptions(randomInt);
+            }
+            answerChoices.add(option3);
+            String choice3 = pokemon.getType1() + " and " + option3;
+            Button button3 = allButtons.get(random.nextInt(allButtons.size()));
+            button3.setText(choice3);
             allButtons.remove(button3);
 
-            String option4 = pokemon.getType1() + " and " + determineOptions(randomInt);
+            String option4 = determineOptions(randomInt);
+            while(answerChoices.contains(option4)){
+                option4 = determineOptions(randomInt);
+            }
+            answerChoices.add(option4);
+            String choice4 = pokemon.getType1() + " and " + option4;
             Button button4 = allButtons.get(0);
-            button4.setText(option4);
+            button4.setText(choice4);
             allButtons.remove(button4);
         }
         else{
-            correctButton = allButtons.get(random.nextInt(allButtons.size() - 1));
-            correctButton.setText(returnAnswer(randomInt,pokemon));
+            String answer = returnAnswer(randomInt, pokemon);
+            answerChoices.add(answer);
+            correctButton = allButtons.get(random.nextInt(allButtons.size()));
+            correctButton.setText(answer);
             allButtons.remove(correctButton);
 
-            Button button2 = allButtons.get(random.nextInt(allButtons.size() - 1));
-            button2.setText(determineOptions(randomInt));
+            String choice2 = determineOptions(randomInt);
+            while(answerChoices.contains(choice2)){
+                choice2 = determineOptions(randomInt);
+            }
+            answerChoices.add(choice2);
+            Button button2 = allButtons.get(random.nextInt(allButtons.size()));
+            button2.setText(choice2);
             allButtons.remove(button2);
 
-            Button button3 = allButtons.get(random.nextInt(allButtons.size() - 1));
-            button3.setText(determineOptions(randomInt));
+            String choice3 = determineOptions(randomInt);
+            while(answerChoices.contains(choice3)){
+                choice3 = determineOptions(randomInt);
+            }
+            answerChoices.add(choice3);
+            Button button3 = allButtons.get(random.nextInt(allButtons.size()));
+            button3.setText(choice3);
             allButtons.remove(button3);
 
+            String choice4 = determineOptions(randomInt);
+            while(answerChoices.contains(choice4)){
+                choice4 = determineOptions(randomInt);
+            }
+            answerChoices.add(choice4);
             Button button4 = allButtons.get(0);
-            button4.setText(determineOptions(randomInt));
+            button4.setText(choice4);
             allButtons.remove(button4);
         }
     }
@@ -168,7 +214,7 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
     private String determineOptions(int randomInt){
         Random random = new Random();
         if(randomInt == 0){
-            return returnRandomType(random.nextInt(17));
+            return returnRandomType(random.nextInt(18));
         }
         if(randomInt == 1){
             Pokemon randomPoke = PokeDex.completePokeDex.get(
