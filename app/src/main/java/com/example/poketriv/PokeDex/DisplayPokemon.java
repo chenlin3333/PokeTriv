@@ -23,12 +23,18 @@ public class DisplayPokemon extends AppCompatActivity {
         setContentView(R.layout.activity_display_pokemon);
         Bundle extras = getIntent().getExtras();
         int position = 0;
+        int generation = 0;
         if (extras != null) {
             String value = extras.getString("Pokemon");
             assert value != null;
+            String gen = extras.getString("Generation");
             position = Integer.parseInt(value);
+            assert gen != null;
+            generation = Integer.parseInt(gen);
         }
-        Pokemon pokemon = DisplayPokedex.currentGen1PokeDex[position];
+        Pokemon[] pokeDex = DisplayPokedex.determineGeneration(generation);
+        assert pokeDex != null;
+        Pokemon pokemon = pokeDex[position];
         final LinearLayout linearLayout = findViewById(R.id.linearLayout);
         final ImageView imageView = findViewById(R.id.PokeImage);
         final TextView type1 = findViewById(R.id.type1);

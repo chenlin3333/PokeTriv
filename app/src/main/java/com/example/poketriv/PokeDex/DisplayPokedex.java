@@ -41,7 +41,7 @@ public class DisplayPokedex extends AppCompatActivity {
         setContentView(R.layout.activity_display_pokedex);
         Bundle extras = getIntent().getExtras();
         assert extras != null;
-        int generation = (int)extras.get("generation");
+        final int generation = (int)extras.get("generation");
         GridView gridView = findViewById(R.id.gridview);
         final Pokemon[] array = determineGeneration(generation);
         PokeDexAdapter adapter = new PokeDexAdapter(this, array);
@@ -54,7 +54,9 @@ public class DisplayPokedex extends AppCompatActivity {
                 if(array[position] != null){
                     Intent myIntent = new Intent(context, DisplayPokemon.class);
                     String value = String.valueOf(position);
+                    String gen = String.valueOf(generation);
                     myIntent.putExtra("Pokemon", value);
+                    myIntent.putExtra("Generation", gen);
                     startActivity(myIntent);
                 }
             }

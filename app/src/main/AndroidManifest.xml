@@ -20,12 +20,12 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".PokeDex.DisplayPokemon"
-            android:parentActivityName=".PokeDex.DisplayPokedex"
+            android:parentActivityName=".DisplayGenerations"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".PokeDex.DisplayPokedex" />
+                android:value=".DisplayGenerations" />
         </activity>
         <activity
             android:name=".DisplayPlayOptions"

@@ -111,7 +111,7 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
         HashSet<String> answerChoices = new HashSet<>();
         if(pokemon.getType2() != null && randomInt == 0){
             String answer = returnAnswer(randomInt, pokemon);
-            answerChoices.add(answer);
+            answerChoices.add(pokemon.getType2());
             correctButton = allButtons.get(random.nextInt(allButtons.size()));
             correctButton.setText(answer);
             allButtons.remove(correctButton);
