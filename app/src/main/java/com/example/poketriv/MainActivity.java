@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         String superrare = gson.toJson(PokeDex.superRarePokemon);
         String ultra = gson.toJson(PokeDex.ultraPokemon);
         String legend = gson.toJson(PokeDex.legendPokemon);
+        String pokedex = gson.toJson(PokeDex.completePokeDex);
         prefsEditor.putString("generation1", gen1);
         prefsEditor.putString("generation2", gen2);
         prefsEditor.putString("generation3", gen3);
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         prefsEditor.putString("superrare", superrare);
         prefsEditor.putString("ultra", ultra);
         prefsEditor.putString("legend", legend);
+        prefsEditor.putString("pokedex", pokedex);
         prefsEditor.apply();
     }
 
@@ -112,6 +114,9 @@ public class MainActivity extends AppCompatActivity {
 
         String gen8List = mPrefs.getString("generation8", null);
         PokeDex.generation8 = gson.fromJson(gen8List, type);
+
+        String completePokedex = mPrefs.getString("pokedex", null);
+        PokeDex.completePokeDex = gson.fromJson(completePokedex, type);
     }
 
     public void shopButton(View view){
