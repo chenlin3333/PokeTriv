@@ -35,7 +35,7 @@ public class DisplayTriviaRewards extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences("GoldCount", 0);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putInt("gold", DisplayShop.goldAmount + DisplayPlayOptions.goldEarned);
+        editor.putInt("gold", sp.getInt("gold", 1000) + DisplayPlayOptions.goldEarned);
         editor.apply();
     }
 
