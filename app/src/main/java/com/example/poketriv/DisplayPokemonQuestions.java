@@ -63,6 +63,10 @@ public class DisplayPokemonQuestions extends AppCompatActivity {
             startActivity(next);
         }
         else{
+            DisplayPlayOptions.correctAnswers = 0;
+            DisplayPlayOptions.maxStreak = 0;
+            DisplayPlayOptions.streak = 0;
+            DisplayPlayOptions.goldEarned = 0;
             Intent result = new Intent(this, DisplayTriviaRewards.class);
             startActivity(result);
         }
